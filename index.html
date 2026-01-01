@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAN DAOURA GROUP S.A.R.L.U — Groupe multisectoriel au Niger</title>
+  <meta name="description" content="DAN DAOURA GROUP S.A.R.L.U — Groupe multisectoriel nigérien : énergie, industrie, BTP, commerce, transport et services." />
+  <style>
+    :root{
+  --bg:#070d1a;          /* bleu nuit profond (premium) */
+  --card:#0b1630;        /* cartes plus riches */
+  --text:#eef3ff;        /* texte très lisible */
+  --muted:#b6c3e6;       /* texte secondaire */
+  --line:rgba(255,255,255,.12);
+
+  --brand:#2b8cff;       /* bleu corporate */
+  --brand2:#7a5cff;      /* violet doux (tech/premium) */
+  --accent:#f5c542;      /* doré discret (premium) */
+
+  --ok:#35d39a;
+  --shadow: 0 16px 60px rgba(0,0,0,.52);
+  --radius: 18px;
+  --max: 1440px;
+  --pad: clamp(18px, 3vw, 34px);
+}
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% -10%, rgba(74,163,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(124,92,255,.25), transparent 55%),
+        radial-gradient(700px 400px at 50% 110%, rgba(53,211,154,.18), transparent 60%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad);}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.62);
+      border-bottom:1px solid var(--line);
+    }
+    .navin{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px var(--pad);
+      max-width:var(--max); margin:0 auto;
+    }
+    .logo{
+      display:flex; gap:10px; align-items:center; text-decoration:none;
+      font-weight:800; letter-spacing:.4px;
+    }
+    .logo-img{
+      width:38px; height:38px;
+      border-radius:10px;
+      object-fit:cover;
+      box-shadow: 0 10px 28px rgba(74,163,255,.25);
+    }
+    .menu{display:flex; gap:18px; align-items:center;}
+    .menu a{
+      text-decoration:none; color:var(--muted);
+      font-weight:600; font-size:14px;
+      padding:8px 10px; border-radius:12px;
+    }
+    .menu a:hover{background: rgba(255,255,255,.06); color:var(--text);}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease, background .15s ease;
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(0,0,0,.28);
+      filter: brightness(1.04);
+    }
+    .btn:active{transform: translateY(0)}
+    .btn:focus-visible{
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 18px 55px rgba(74,163,255,.25);
+    }
+    .btn.whatsapp{
+      border:none;
+      background: linear-gradient(135deg, var(--ok), #2ab1ff);
+      color:#041019;
+      box-shadow: 0 18px 55px rgba(53,211,154,.18);
+    }
+    .social-links{display:flex; gap:12px; flex-wrap:wrap;}
+    .social-btn{
+      width:64px; height:64px;
+      padding:0;
+      border-radius:14px;
+    }
+    .social-btn .social-icon{
+      width:100%; height:100%;
+      object-fit:cover;
+      border-radius:12px;
+    }
+
+    header.hero{padding:70px 0 34px;}
+    .hero-grid{
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:26px;
+      align-items:stretch;
+    }
+    .chip{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: 999px;
+      color:var(--muted);
+      font-weight:700; font-size:13px;
+    }
+    .chip b{color:var(--text)}
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(34px, 4.2vw, 54px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .hero-brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin:14px 0 10px;
+    }
+    .hero-brand h1{margin:0}
+    .hero-logo{
+      width:84px; height:84px;
+      border-radius:18px;
+      object-fit:cover;
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size: clamp(16px, 1.4vw, 18px);
+      max-width: 62ch;
+    }
+    .cta{display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;}
+    .panel{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    .stats{
+      display:grid; grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .stat{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .stat .k{font-weight:900; font-size:18px;}
+    .stat .d{color:var(--muted); font-size:13px; margin-top:4px;}
+    section{padding:34px 0;}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:18px; margin-bottom:16px;
+    }
+    h2{margin:0; font-size: clamp(22px, 2.4vw, 30px); letter-spacing:-.3px;}
+    .section-title p{margin:0; color:var(--muted); max-width:70ch;}
+    .cards{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      transition: transform .15s ease, background .15s ease;
+      min-height: 180px;
+    }
+    .card:hover{transform: translateY(-2px); background: rgba(255,255,255,.06);}
+    .card-photo{
+      position: relative;
+      overflow: hidden;
+    }
+    .card-photo::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: var(--card-img) center/cover no-repeat;
+      filter: saturate(1.08) contrast(1.05);
+      z-index:0;
+    }
+    .card-photo::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(7,13,26,.18), rgba(7,13,26,.86));
+      z-index:1;
+    }
+    .card-photo > *{
+      position: relative;
+      z-index:2;
+    }
+    .reveal{
+      opacity:0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.in-view{
+      opacity:1;
+      transform: translateY(0);
+    }
+    .reveal-text{
+      opacity:0;
+      transform: translateY(10px);
+      transition: opacity .5s ease, transform .5s ease;
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+    .reveal-text.in-view{
+      opacity:1;
+      transform: translateY(0);
+    }
+    .reveal-slide-left,
+    .reveal-slide-right,
+    .reveal-zoom{
+      opacity:0;
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal-slide-left{transform: translateX(-28px);}
+    .reveal-slide-right{transform: translateX(28px);}
+    .reveal-zoom{transform: translateY(12px) scale(.98);}
+    .reveal-slide-left.in-view,
+    .reveal-slide-right.in-view,
+    .reveal-zoom.in-view{
+      opacity:1;
+      transform: translate(0, 0) scale(1);
+    }
+    .btn.reveal-text:hover{
+      transform: translateY(-2px);
+    }
+    .btn.reveal-text:active{
+      transform: translateY(0);
+    }
+    .card h3{margin:8px 0 8px; font-size:16px;}
+    .tag{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color:var(--muted);
+      font-weight:800;
+      font-size:12px;
+    }
+    .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted);}
+    .two{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+      align-items:stretch;
+    }
+    .list{
+      margin:0; padding:0; list-style:none;
+      display:grid; gap:10px;
+    }
+    .li{
+      padding:12px 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius:16px;
+      color:var(--muted);
+    }
+    .li b{color:var(--text)}
+    footer{
+      padding:28px 0 44px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .small{font-size:13px}
+    .contact{
+      display:grid; gap:10px;
+    }
+    .contact a{color:var(--text); text-decoration:none}
+    .contact a:hover{text-decoration:underline}
+    .badge{
+      display:inline-flex; padding:7px 10px; border-radius:12px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      font-size:12px; font-weight:800;
+    }
+
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .cards{grid-template-columns: 1fr;}
+      .two{grid-template-columns: 1fr;}
+      .stats{grid-template-columns: 1fr 1fr;}
+      .menu{display:none;}
+    }
+    h1, h2 {
+  background: linear-gradient(135deg, var(--text), rgba(245,197,66,.75));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+header.hero{
+  padding:70px 0 34px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  --hero-img: url("assets/hero.jpg");
+}
+
+header.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, rgba(7,13,26,.92) 0%, rgba(7,13,26,.72) 55%, rgba(7,13,26,.92) 100%),
+    var(--hero-img) center/cover no-repeat;
+  transform: scale(1);
+  transition: opacity .8s ease;
+  animation: hero-drift 16s ease-in-out infinite;
+  z-index:-2;
+}
+header.hero.is-fading::before{
+  opacity: 0;
+}
+@keyframes hero-drift{
+  0%{background-position: center;}
+  50%{background-position: 56% 48%;}
+  100%{background-position: center;}
+}
+
+header.hero::after{
+  content:"";
+  position:absolute; inset:-120px;
+  background: radial-gradient(600px 300px at 30% 10%, rgba(43,140,255,.35), transparent 60%);
+  z-index:-1;
+}
+
+
+    /* =========================
+   SECTION DEMANDE DE DEVIS
+========================= */
+
+#devis {
+  padding: 40px 0;
+}
+
+#devis form {
+  margin-top: 10px;
+}
+
+#devis label {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+#devis input,
+#devis select,
+#devis textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border .15s ease, box-shadow .15s ease, background .15s ease;
+}
+#devis select option {
+  color: #0b1630;
+  background: #eef3ff;
+}
+
+#devis input::placeholder,
+#devis textarea::placeholder {
+  color: rgba(255,255,255,.45);
+}
+
+#devis input:focus,
+#devis select:focus,
+#devis textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(74,163,255,.15);
+  background: rgba(255,255,255,.08);
+}
+
+#devis textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#devis button {
+  margin-top: 14px;
+  width: 100%;
+  font-size: 15px;
+}
+
+#devis .note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  opacity: .9;
+}
+
+/* Responsive ajustement */
+@media (max-width: 920px) {
+  #devis .two {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* HERO en pleine largeur, même si le contenu est dans .wrap */
+main.wrap{
+  position: relative;
+}
+
+header.hero{
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+/* HERO en pleine largeur, même si le contenu est dans .wrap */
+main.wrap{
+  position: relative;
+}
+
+header.hero{
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Le background prend toute la largeur de l'écran */
+header.hero::before,
+header.hero::after{
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+/* ✅ Mobile: on améliore l'affichage et la hauteur */
+@media (max-width: 920px){
+  header.hero{
+    padding: 56px 0 26px;
+  }
+  header.hero::before{
+    background-position: center;
+  }
+}
+
+
+/* Le background prend toute la largeur de l'écran */
+header.hero::before,
+header.hero::after{
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+/* ✅ Mobile: on améliore l'affichage et la hauteur */
+@media (max-width: 920px){
+  header.hero{
+    padding: 56px 0 26px;
+  }
+  header.hero::before{
+    background-position: center;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="navin">
+      <a class="logo" href="#top">
+        <img class="logo-img" src="assets/logo.jpeg" alt="Logo DAN DAOURA GROUP" />
+        <span>DAN DAOURA GROUP</span>
+      </a>
+      <div class="menu" aria-label="Navigation">
+        <a href="#activites">Activités</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#devis">Demande de devis</a>
+      </div>
+      <a class="btn primary" href="#contact">Demander un contact</a>
+    </div>
+  </div>
+
+  <main id="top" class="wrap">
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="chip">🇳🇪 <b>SARL-U</b> • Groupe nigérien • Niger & International</span>
+          <div class="hero-brand">
+            <img class="hero-logo" src="assets/logo.jpeg" alt="Logo DAN DAOURA GROUP" />
+            <h1>DAN DAOURA GROUP S.A.R.L.U</h1>
+          </div>
+          <p class="lead">
+            Entreprise de droit nigérien créée par des Nigériens pour accroître et diversifier les activités du secteur privé.
+            Nous intervenons dans l’énergie, l’industrie, le BTP, l’assainissement, le commerce et la logistique.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="#activites">Découvrir nos activités</a>
+            <a class="btn primary" href="#devis">Demander un devis</a>
+            <a class="btn whatsapp" target="_blank"
+               href="https://wa.me/22798776777?text=Bonjour%20DAN%20DAOURA%20GROUP%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20prestations.">
+              WhatsApp direct
+            </a>
+            <a class="btn" href="#contact">Téléphones & Adresse</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-title" style="margin-bottom:12px;">
+            <h2 style="font-size:18px;margin:0;">Aperçu</h2>
+            <span class="badge">Lancement officiel</span>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="k">Niamey, Niger</div>
+              <div class="d">Siège social • BP : 10317</div>
+            </div>
+            <div class="stat">
+              <div class="k">OHADA</div>
+              <div class="d">Statuts conformes au droit des sociétés</div>
+            </div>
+            <div class="stat">
+              <div class="k">Multi-secteurs</div>
+              <div class="d">Pôles structurés et lisibles</div>
+            </div>
+            <div class="stat">
+              <div class="k">Partenariats</div>
+              <div class="d">Devis & collaboration sur demande</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px; color:var(--muted); font-size:13px;">
+            <b style="color:var(--text);">Téléphones :</b>
+            (+227) 98776777 / 93829493 / 85908686
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="activites">
+      <div class="section-title">
+        <div>
+          <h2>Nos domaines d’activités</h2>
+        </div>
+      </div>
+
+    <div class="two" style="margin-bottom:14px;">
+        <div class="card" style="padding:0; overflow:hidden;">
+        <img src="assets/homme_af.jpg" alt="Activités DAN DAOURA GROUP"
+         style="width:100%; height:260px; object-fit:cover; display:block;">
+        </div>
+    <div class="card">
+        <span class="tag">Nos pôles</span>
+        <h3>Une organisation structurée</h3>
+        <p style="color:var(--muted); margin:0;">
+        Énergie, industrie, BTP, commerce et logistique — regroupés pour une lecture claire
+        et une meilleure compréhension de nos prestations.
+        </p>
+    </div>
+</div>
+
+
+      <div class="cards">
+        <div class="card card-photo" style="--card-img: url('assets/moiba.jpg');">
+          <span class="tag">Énergie & Ressources</span>
+          <h3>Solutions & exploitation</h3>
+          <ul>
+            <li>Production, transformation et distribution d’énergie (solaire, thermique…)</li>
+            <li>Exploitation minière</li>
+            <li>Activités pétrolières & gazières (gaz domestique : centre remplisseur, vente)</li>
+          </ul>
+        </div>
+
+        <div class="card card-photo" style="--card-img: url('assets/alimentaire.jpg');">
+          <span class="tag">Industrie & Agroalimentaire</span>
+          <h3>Équipements & maintenance</h3>
+          <ul>
+            <li>Boulangerie-pâtisserie & agroalimentaire (commande, vente, installation, maintenance)</li>
+            <li>Moulins pour transformation céréalière (achat/vente/commercialisation)</li>
+            <li>Maintenance industrielle</li>
+          </ul>
+        </div>
+
+        <div class="card card-photo" style="--card-img: url('assets/8866.jpeg');">
+          <span class="tag">BTP • Hydraulique • WASH</span>
+          <h3>Infrastructures & environnement</h3>
+          <ul>
+            <li>Travaux publics, BTP, hydraulique</li>
+            <li>Eau, hygiène et assainissement</li>
+            <li>Prestations associées et suivi</li>
+          </ul>
+        </div>
+
+        <div class="card card-photo" style="--card-img: url('assets/azert.jpg');">
+          <span class="tag">Commerce & Services</span>
+          <h3>Intermédiation & distribution</h3>
+          <ul>
+            <li>Commerce général</li>
+            <li>Représentation & intermédiation commerciale</li>
+            <li>Négoce, distribution, prestation de services</li>
+          </ul>
+        </div>
+
+        <div class="card card-photo" style="--card-img: url('assets/cadena.jpg');">
+          <span class="tag">Import-Export</span>
+          <h3>Approvisionnement</h3>
+          <ul>
+            <li>Import-export</li>
+            <li>Chaînes d’approvisionnement</li>
+            <li>Opérations commerciales associées</li>
+          </ul>
+        </div>
+
+        <div class="card card-photo" style="--card-img: url('assets/activites.jpeg');">
+          <span class="tag">Transport & Véhicules</span>
+          <h3>Logistique</h3>
+          <ul>
+            <li>Transport des marchandises</li>
+            <li>Vente & location de véhicules</li>
+            <li>Organisation logistique</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos">
+      <div class="two">
+        <div class="panel">
+          <h2>À propos</h2>
+          <p style="color:var(--muted); margin-top:10px;">
+            <b style="color:var(--text);">DAN DAOURA GROUP S.A.R.L.U</b> est une entreprise de droit nigérien,
+            créée par des Nigériens, visant à renforcer le secteur privé par des activités diversifiées et structurées.
+          </p>
+          <ul class="list" style="margin-top:14px;">
+            <li class="li"><b>Vision :</b> contribuer durablement au développement économique du Niger.</li>
+            <li class="li"><b>Mission :</b> fournir des solutions fiables, performantes et adaptées aux besoins locaux.</li>
+            <li class="li"><b>Valeurs :</b> professionnalisme, qualité, transparence, respect des normes.</li>
+          </ul>
+        </div>
+
+        <div class="panel" id="services">
+          <h2>Notre approche</h2>
+          <p style="color:var(--muted); margin-top:10px;">
+            Nous accompagnons nos clients de l’étude à la mise en œuvre, avec une logique de qualité et de suivi.
+          </p>
+          <ul class="list" style="margin-top:14px;">
+            <li class="li"><b>Étude & conseil :</b> analyse du besoin, recommandations, cadrage.</li>
+            <li class="li"><b>Fourniture :</b> sourcing, importation si nécessaire, livraison.</li>
+            <li class="li"><b>Installation :</b> exécution, supervision, contrôle qualité.</li>
+            <li class="li"><b>Maintenance :</b> entretien préventif et correctif.</li>
+            <li class="li"><b>Partenariats :</b> collaboration commerciale et représentation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="devis">
+  <div class="panel">
+    <div class="section-title">
+      <div>
+        <h2>Demande de cotation</h2>
+        <p>
+          Décrivez votre besoin. Après étude, notre équipe vous contactera
+          pour vous proposer une solution adaptée.
+        </p>
+      </div>
+    </div>
+
+    <form id="devisForm" class="two" action="#" method="post">
+      <div class="card" style="min-height:auto;">
+        <label>Nom / Entreprise</label>
+        <input type="text" id="nom" name="nom" required placeholder="Votre nom ou société">
+
+        <label>Téléphone</label>
+        <input type="tel" id="telephone" name="telephone" required placeholder="+227 ...">
+
+        <label>Email (optionnel)</label>
+        <input type="email" id="email" name="email" placeholder="exemple@email.com">
+
+        <label>Ville / Pays</label>
+        <input type="text" id="ville" name="ville" placeholder="Niamey, Niger">
+      </div>
+
+      <div class="card" style="min-height:auto;">
+        <label>Domaine concerné</label>
+        <select id="domaine" name="domaine" required>
+          <option value="">-- Sélectionner --</option>
+          <option>Énergie & Ressources</option>
+          <option>Industrie & Agroalimentaire</option>
+          <option>BTP / Hydraulique / Assainissement</option>
+          <option>Commerce & Services</option>
+          <option>Transport & Logistique</option>
+          <option>Autre</option>
+        </select>
+
+        <label>Description du besoin</label>
+        <textarea id="description" name="description" required placeholder="Expliquez votre projet ou votre demande..."></textarea>
+
+        <button class="btn primary" type="submit">
+          Envoyer la demande de devis
+        </button>
+
+        <div class="note">
+          🔒 Les informations transmises sont strictement confidentielles.
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+    <section id="contact">
+      <div class="panel">
+        <div class="section-title">
+          <div>
+            <h2>Contact</h2>
+            <p>Pour une demande d’information, un partenariat ou un devis : contactez-nous.</p>
+          </div>
+          <a class="btn whatsapp" target="_blank"
+             href="https://wa.me/22798776777?text=Bonjour%20DAN%20DAOURA%20GROUP%2C%20je%20souhaite%20vous%20contacter%20pour%20une%20demande.">
+            WhatsApp
+          </a>
+        </div>
+
+        <div class="two">
+          <div class="card" style="min-height:auto;">
+            <h3>Coordonnées</h3>
+            <div class="contact">
+              <div><b>Siège :</b> Niamey, Niger</div>
+              <div><b>BP :</b> 10317</div>
+              <div><b>Téléphones :</b> (+227) 98776777 / 93829493 / 85908686</div>
+              <div><b>Email :</b> <i>à ajouter</i> (ex: contact@dandaouragroup.ne)</div>
+            </div>
+          </div>
+
+          <div class="card" style="min-height:auto;">
+            <h3>Réseaux sociaux</h3>
+           
+            <div class="social-links">
+              <a class="btn social-btn" href="#" onclick="return false;" aria-label="Facebook">
+                <img class="social-icon" src="assets/facebook.jpg" alt="" />
+              </a>
+              <a class="btn social-btn" href="#" onclick="return false;" aria-label="Twitter">
+                <img class="social-icon" src="assets/twitter.jpg" alt="" />
+              </a>
+              <a class="btn social-btn" href="#" onclick="return false;" aria-label="Instagram">
+                <img class="social-icon" src="assets/insta.jpg" alt="" />
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div>
+          <div style="font-weight:900; color:var(--text);">DAN DAOURA GROUP S.A.R.L.U</div>
+          <div class="small">© <span id="y"></span> — Tous droits réservés.</div>
+        </div>
+        <div class="small">
+          Mention légale : “Société À Responsabilité Limitée Unipersonnelle (SARL-U)”
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Numéro WhatsApp de l'admin (format international sans le +)
+    const ADMIN_WHATSAPP = "22798776777"; // Modifier ce numéro si nécessaire
+
+    // Gestion du formulaire de devis
+    const devisForm = document.getElementById("devisForm");
+    if (devisForm) {
+      devisForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        // Récupérer les valeurs du formulaire
+        const nom = document.getElementById("nom").value;
+        const telephone = document.getElementById("telephone").value;
+        const email = document.getElementById("email").value;
+        const ville = document.getElementById("ville").value;
+        const domaine = document.getElementById("domaine").value;
+        const description = document.getElementById("description").value;
+        
+        // Créer le message WhatsApp
+        let message = "🔹 *NOUVELLE DEMANDE DE DEVIS*\n\n";
+        message += `👤 *Nom/Entreprise:* ${nom}\n`;
+        message += `📱 *Téléphone:* ${telephone}\n`;
+        if (email) message += `📧 *Email:* ${email}\n`;
+        if (ville) message += `📍 *Ville:* ${ville}\n`;
+        message += `🏢 *Domaine:* ${domaine}\n\n`;
+        message += `📝 *Description du besoin:*\n${description}`;
+        
+        // Encoder le message pour l'URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Créer l'URL WhatsApp
+        const whatsappURL = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodedMessage}`;
+        
+        // Ouvrir WhatsApp dans un nouvel onglet
+        window.open(whatsappURL, '_blank');
+        
+        // Optionnel: Réinitialiser le formulaire après l'envoi
+        // devisForm.reset();
+        
+        // Afficher un message de confirmation
+        alert("Votre demande va être envoyée via WhatsApp. Merci !");
+      });
+    }
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const hero = document.querySelector("header.hero");
+    const heroImages = [
+      "assets/hero.jpg",
+      "assets/activites.jpeg",
+      "assets/Big-5.jpg"
+    ];
+    const fadeDuration = 800;
+    let heroIndex = 0;
+    setInterval(() => {
+      hero.classList.add("is-fading");
+      setTimeout(() => {
+        heroIndex = (heroIndex + 1) % heroImages.length;
+        hero.style.setProperty("--hero-img", `url("${heroImages[heroIndex]}")`);
+        hero.classList.remove("is-fading");
+      }, fadeDuration / 2);
+    }, 4000);
+
+    const revealItems = document.querySelectorAll("section, header.hero, footer");
+    const revealText = document.querySelectorAll("h1, h2, h3, p, li, .tag, .btn");
+    revealItems.forEach((el) => el.classList.add("reveal"));
+    revealText.forEach((el, i) => {
+      el.classList.add("reveal-text");
+      const delay = el.classList.contains("btn") ? 0 : Math.min(i * 40, 240);
+      el.style.setProperty("--reveal-delay", `${delay}ms`);
+    });
+    const activityCards = document.querySelectorAll("#activites .cards .card");
+    activityCards.forEach((el, i) => {
+      el.classList.add(i % 2 === 0 ? "reveal-slide-left" : "reveal-slide-right");
+    });
+    const creativeBlocks = document.querySelectorAll(".panel, .card");
+    creativeBlocks.forEach((el) => {
+      if (el.closest("#activites .cards")) {
+        return;
+      }
+      el.classList.add("reveal-zoom");
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+    document
+      .querySelectorAll(
+        ".reveal, .reveal-text, .reveal-slide-left, .reveal-slide-right, .reveal-zoom"
+      )
+      .forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
