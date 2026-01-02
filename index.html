@@ -1,904 +1,977 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DAN DAOURA GROUP S.A.R.L.U — Groupe multisectoriel au Niger</title>
-  <meta name="description" content="DAN DAOURA GROUP S.A.R.L.U — Groupe multisectoriel nigérien : énergie, industrie, BTP, commerce, transport et services." />
-  <style>
-    :root{
-  --bg:#070d1a;          /* bleu nuit profond (premium) */
-  --card:#0b1630;        /* cartes plus riches */
-  --text:#eef3ff;        /* texte très lisible */
-  --muted:#b6c3e6;       /* texte secondaire */
-  --line:rgba(255,255,255,.12);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAN DAOURA GROUP S.A.R.L.U - Diversification et Excellence au Niger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  --brand:#2b8cff;       /* bleu corporate */
-  --brand2:#7a5cff;      /* violet doux (tech/premium) */
-  --accent:#f5c542;      /* doré discret (premium) */
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #f59e0b;
+            --text-dark: #1a202c;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+        }
 
-  --ok:#35d39a;
-  --shadow: 0 16px 60px rgba(0,0,0,.52);
-  --radius: 18px;
-  --max: 1440px;
-  --pad: clamp(18px, 3vw, 34px);
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(900px 500px at 20% -10%, rgba(74,163,255,.35), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(124,92,255,.25), transparent 55%),
-        radial-gradient(700px 400px at 50% 110%, rgba(53,211,154,.18), transparent 60%),
-        var(--bg);
-      line-height:1.55;
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad);}
-    .nav{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.62);
-      border-bottom:1px solid var(--line);
-    }
-    .navin{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px var(--pad);
-      max-width:var(--max); margin:0 auto;
-    }
-    .logo{
-      display:flex; gap:10px; align-items:center; text-decoration:none;
-      font-weight:800; letter-spacing:.4px;
-    }
-    .logo-img{
-      width:38px; height:38px;
-      border-radius:10px;
-      object-fit:cover;
-      box-shadow: 0 10px 28px rgba(74,163,255,.25);
-    }
-    .menu{display:flex; gap:18px; align-items:center;}
-    .menu a{
-      text-decoration:none; color:var(--muted);
-      font-weight:600; font-size:14px;
-      padding:8px 10px; border-radius:12px;
-    }
-    .menu a:hover{background: rgba(255,255,255,.06); color:var(--text);}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius: 14px;
-      text-decoration:none;
-      font-weight:800;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease, background .15s ease;
-    }
-    .btn:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 14px 36px rgba(0,0,0,.28);
-      filter: brightness(1.04);
-    }
-    .btn:active{transform: translateY(0)}
-    .btn:focus-visible{
-      outline: 2px solid var(--brand);
-      outline-offset: 2px;
-    }
-    .btn.primary{
-      border:none;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 18px 55px rgba(74,163,255,.25);
-    }
-    .btn.whatsapp{
-      border:none;
-      background: linear-gradient(135deg, var(--ok), #2ab1ff);
-      color:#041019;
-      box-shadow: 0 18px 55px rgba(53,211,154,.18);
-    }
-    .social-links{display:flex; gap:12px; flex-wrap:wrap;}
-    .social-btn{
-      width:64px; height:64px;
-      padding:0;
-      border-radius:14px;
-    }
-    .social-btn .social-icon{
-      width:100%; height:100%;
-      object-fit:cover;
-      border-radius:12px;
-    }
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-    header.hero{padding:70px 0 34px;}
-    .hero-grid{
-      display:grid; grid-template-columns: 1.1fr .9fr; gap:26px;
-      align-items:stretch;
-    }
-    .chip{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      border-radius: 999px;
-      color:var(--muted);
-      font-weight:700; font-size:13px;
-    }
-    .chip b{color:var(--text)}
-    h1{
-      margin:14px 0 10px;
-      font-size: clamp(34px, 4.2vw, 54px);
-      line-height:1.05;
-      letter-spacing:-.6px;
-    }
-    .hero-brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      margin:14px 0 10px;
-    }
-    .hero-brand h1{margin:0}
-    .hero-logo{
-      width:84px; height:84px;
-      border-radius:18px;
-      object-fit:cover;
-      box-shadow: 0 18px 40px rgba(0,0,0,.35);
-    }
-    .lead{
-      margin:0;
-      color:var(--muted);
-      font-size: clamp(16px, 1.4vw, 18px);
-      max-width: 62ch;
-    }
-    .cta{display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;}
-    .panel{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:22px;
-    }
-    .stats{
-      display:grid; grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    .stat{
-      padding:14px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-    }
-    .stat .k{font-weight:900; font-size:18px;}
-    .stat .d{color:var(--muted); font-size:13px; margin-top:4px;}
-    section{padding:34px 0;}
-    .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:18px; margin-bottom:16px;
-    }
-    h2{margin:0; font-size: clamp(22px, 2.4vw, 30px); letter-spacing:-.3px;}
-    .section-title p{margin:0; color:var(--muted); max-width:70ch;}
-    .cards{
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .card{
-      padding:18px;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      transition: transform .15s ease, background .15s ease;
-      min-height: 180px;
-    }
-    .card:hover{transform: translateY(-2px); background: rgba(255,255,255,.06);}
-    .card-photo{
-      position: relative;
-      overflow: hidden;
-    }
-    .card-photo::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: var(--card-img) center/cover no-repeat;
-      filter: saturate(1.08) contrast(1.05);
-      z-index:0;
-    }
-    .card-photo::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(7,13,26,.18), rgba(7,13,26,.86));
-      z-index:1;
-    }
-    .card-photo > *{
-      position: relative;
-      z-index:2;
-    }
-    .reveal{
-      opacity:0;
-      transform: translateY(18px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .reveal.in-view{
-      opacity:1;
-      transform: translateY(0);
-    }
-    .reveal-text{
-      opacity:0;
-      transform: translateY(10px);
-      transition: opacity .5s ease, transform .5s ease;
-      transition-delay: var(--reveal-delay, 0ms);
-    }
-    .reveal-text.in-view{
-      opacity:1;
-      transform: translateY(0);
-    }
-    .reveal-slide-left,
-    .reveal-slide-right,
-    .reveal-zoom{
-      opacity:0;
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .reveal-slide-left{transform: translateX(-28px);}
-    .reveal-slide-right{transform: translateX(28px);}
-    .reveal-zoom{transform: translateY(12px) scale(.98);}
-    .reveal-slide-left.in-view,
-    .reveal-slide-right.in-view,
-    .reveal-zoom.in-view{
-      opacity:1;
-      transform: translate(0, 0) scale(1);
-    }
-    .btn.reveal-text:hover{
-      transform: translateY(-2px);
-    }
-    .btn.reveal-text:active{
-      transform: translateY(0);
-    }
-    .card h3{margin:8px 0 8px; font-size:16px;}
-    .tag{
-      display:inline-flex;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      color:var(--muted);
-      font-weight:800;
-      font-size:12px;
-    }
-    .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted);}
-    .two{
-      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
-      align-items:stretch;
-    }
-    .list{
-      margin:0; padding:0; list-style:none;
-      display:grid; gap:10px;
-    }
-    .li{
-      padding:12px 14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius:16px;
-      color:var(--muted);
-    }
-    .li b{color:var(--text)}
-    footer{
-      padding:28px 0 44px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-    }
-    .foot{
-      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
-      align-items:flex-start;
-    }
-    .small{font-size:13px}
-    .contact{
-      display:grid; gap:10px;
-    }
-    .contact a{color:var(--text); text-decoration:none}
-    .contact a:hover{text-decoration:underline}
-    .badge{
-      display:inline-flex; padding:7px 10px; border-radius:12px;
-      background: rgba(255,255,255,.06);
-      border:1px solid var(--line);
-      font-size:12px; font-weight:800;
-    }
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
 
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns: 1fr;}
-      .cards{grid-template-columns: 1fr;}
-      .two{grid-template-columns: 1fr;}
-      .stats{grid-template-columns: 1fr 1fr;}
-      .menu{display:none;}
-    }
-    h1, h2 {
-  background: linear-gradient(135deg, var(--text), rgba(245,197,66,.75));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-header.hero{
-  padding:70px 0 34px;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
-  --hero-img: url("assets/hero.jpg");
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
 
-header.hero::before{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    linear-gradient(90deg, rgba(7,13,26,.92) 0%, rgba(7,13,26,.72) 55%, rgba(7,13,26,.92) 100%),
-    var(--hero-img) center/cover no-repeat;
-  transform: scale(1);
-  transition: opacity .8s ease;
-  animation: hero-drift 16s ease-in-out infinite;
-  z-index:-2;
-}
-header.hero.is-fading::before{
-  opacity: 0;
-}
-@keyframes hero-drift{
-  0%{background-position: center;}
-  50%{background-position: 56% 48%;}
-  100%{background-position: center;}
-}
+        .logo span {
+            color: var(--accent-color);
+        }
 
-header.hero::after{
-  content:"";
-  position:absolute; inset:-120px;
-  background: radial-gradient(600px 300px at 30% 10%, rgba(43,140,255,.35), transparent 60%);
-  z-index:-1;
-}
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-    /* =========================
-   SECTION DEMANDE DE DEVIS
-========================= */
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
 
-#devis {
-  padding: 40px 0;
-}
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
 
-#devis form {
-  margin-top: 10px;
-}
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            transition: 0.3s;
+        }
 
-#devis label {
-  display: block;
-  margin: 10px 0 6px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--muted);
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.65) 0%, rgba(43, 108, 176, 0.60) 100%), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop') center/cover;
+            color: white;
+            padding: 180px 2rem 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-#devis input,
-#devis select,
-#devis textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.05);
-  color: var(--text);
-  font-size: 14px;
-  outline: none;
-  transition: border .15s ease, box-shadow .15s ease, background .15s ease;
-}
-#devis select option {
-  color: #0b1630;
-  background: #eef3ff;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.1;
+        }
 
-#devis input::placeholder,
-#devis textarea::placeholder {
-  color: rgba(255,255,255,.45);
-}
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
 
-#devis input:focus,
-#devis select:focus,
-#devis textarea:focus {
-  border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(74,163,255,.15);
-  background: rgba(255,255,255,.08);
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
-#devis textarea {
-  resize: vertical;
-  min-height: 120px;
-}
+        .hero h1.animate {
+            animation: fadeInUp 1s ease forwards;
+        }
 
-#devis button {
-  margin-top: 14px;
-  width: 100%;
-  font-size: 15px;
-}
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
-#devis .note {
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--muted);
-  opacity: .9;
-}
+        .hero p.animate {
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
 
-/* Responsive ajustement */
-@media (max-width: 920px) {
-  #devis .two {
-    grid-template-columns: 1fr;
-  }
-}
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
-/* HERO en pleine largeur, même si le contenu est dans .wrap */
-main.wrap{
-  position: relative;
-}
+        .cta-buttons.animate {
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
 
-header.hero{
-  position: relative;
-  border-bottom: 1px solid var(--line);
-}
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-/* HERO en pleine largeur, même si le contenu est dans .wrap */
-main.wrap{
-  position: relative;
-}
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
 
-header.hero{
-  position: relative;
-  border-bottom: 1px solid var(--line);
-}
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
 
-/* Le background prend toute la largeur de l'écran */
-header.hero::before,
-header.hero::after{
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-}
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
 
-/* ✅ Mobile: on améliore l'affichage et la hauteur */
-@media (max-width: 920px){
-  header.hero{
-    padding: 56px 0 26px;
-  }
-  header.hero::before{
-    background-position: center;
-  }
-}
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
 
+        /* About Section */
+        .about {
+            padding: 100px 2rem;
+            background: white;
+        }
 
-/* Le background prend toute la largeur de l'écran */
-header.hero::before,
-header.hero::after{
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* ✅ Mobile: on améliore l'affichage et la hauteur */
-@media (max-width: 920px){
-  header.hero{
-    padding: 56px 0 26px;
-  }
-  header.hero::before{
-    background-position: center;
-  }
-}
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
 
-  </style>
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+        }
+
+        .stat-card.animate {
+            animation: cardAppear 0.6s ease forwards;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .stat-card h4 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 2rem;
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+        }
+
+        .service-card.animate {
+            animation: cardAppear 0.6s ease forwards;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            border-color: var(--accent-color);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 2rem;
+            background: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .contact-item.animate {
+            animation: slideInLeft 0.6s ease forwards;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cardAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9) rotateX(-10deg);
+            }
+            60% {
+                transform: translateY(-10px) scale(1.02) rotateX(5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="nav">
-    <div class="navin">
-      <a class="logo" href="#top">
-        <img class="logo-img" src="assets/logo.jpeg" alt="Logo DAN DAOURA GROUP" />
-        <span>DAN DAOURA GROUP</span>
-      </a>
-      <div class="menu" aria-label="Navigation">
-        <a href="#activites">Activités</a>
-        <a href="#apropos">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="#devis">Demande de devis</a>
-      </div>
-      <a class="btn primary" href="#contact">Demander un contact</a>
-    </div>
-  </div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">DAN DAOURA <span>GROUP</span></a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil" onclick="closeMenu()">Accueil</a></li>
+                <li><a href="#apropos" onclick="closeMenu()">À Propos</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <main id="top" class="wrap">
-    <header class="hero">
-      <div class="hero-grid">
-        <div>
-          <span class="chip">🇳🇪 <b>SARL-U</b> • Groupe nigérien • Niger & International</span>
-          <div class="hero-brand">
-            <img class="hero-logo" src="assets/logo.jpeg" alt="Logo DAN DAOURA GROUP" />
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
             <h1>DAN DAOURA GROUP S.A.R.L.U</h1>
-          </div>
-          <p class="lead">
-            Entreprise de droit nigérien créée par des Nigériens pour accroître et diversifier les activités du secteur privé.
-            Nous intervenons dans l’énergie, l’industrie, le BTP, l’assainissement, le commerce et la logistique.
-          </p>
-
-          <div class="cta">
-            <a class="btn primary" href="#activites">Découvrir nos activités</a>
-            <a class="btn primary" href="#devis">Demander un devis</a>
-            <a class="btn whatsapp" target="_blank"
-               href="https://wa.me/22798776777?text=Bonjour%20DAN%20DAOURA%20GROUP%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20prestations.">
-              WhatsApp direct
-            </a>
-            <a class="btn" href="#contact">Téléphones & Adresse</a>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="section-title" style="margin-bottom:12px;">
-            <h2 style="font-size:18px;margin:0;">Aperçu</h2>
-            <span class="badge">Lancement officiel</span>
-          </div>
-          <div class="stats">
-            <div class="stat">
-              <div class="k">Niamey, Niger</div>
-              <div class="d">Siège social • BP : 10317</div>
+            <p>Une entreprise nigérienne innovante, dédiée à la diversification et l'excellence dans les secteurs clés de l'économie nationale</p>
+            <div class="cta-buttons">
+                <a href="#services" class="btn btn-primary">Découvrir nos services</a>
+                <a href="#contact" class="btn btn-secondary">Nous contacter</a>
             </div>
-            <div class="stat">
-              <div class="k">OHADA</div>
-              <div class="d">Statuts conformes au droit des sociétés</div>
-            </div>
-            <div class="stat">
-              <div class="k">Multi-secteurs</div>
-              <div class="d">Pôles structurés et lisibles</div>
-            </div>
-            <div class="stat">
-              <div class="k">Partenariats</div>
-              <div class="d">Devis & collaboration sur demande</div>
-            </div>
-          </div>
-
-          <div style="margin-top:14px; color:var(--muted); font-size:13px;">
-            <b style="color:var(--text);">Téléphones :</b>
-            (+227) 98776777 / 93829493 / 85908686
-          </div>
         </div>
-      </div>
-    </header>
-
-    <section id="activites">
-      <div class="section-title">
-        <div>
-          <h2>Nos domaines d’activités</h2>
-        </div>
-      </div>
-
-    <div class="two" style="margin-bottom:14px;">
-        <div class="card" style="padding:0; overflow:hidden;">
-        <img src="assets/homme_af.jpg" alt="Activités DAN DAOURA GROUP"
-         style="width:100%; height:260px; object-fit:cover; display:block;">
-        </div>
-    <div class="card">
-        <span class="tag">Nos pôles</span>
-        <h3>Une organisation structurée</h3>
-        <p style="color:var(--muted); margin:0;">
-        Énergie, industrie, BTP, commerce et logistique — regroupés pour une lecture claire
-        et une meilleure compréhension de nos prestations.
-        </p>
-    </div>
-</div>
-
-
-      <div class="cards">
-        <div class="card card-photo" style="--card-img: url('assets/moiba.jpg');">
-          <span class="tag">Énergie & Ressources</span>
-          <h3>Solutions & exploitation</h3>
-          <ul>
-            <li>Production, transformation et distribution d’énergie (solaire, thermique…)</li>
-            <li>Exploitation minière</li>
-            <li>Activités pétrolières & gazières (gaz domestique : centre remplisseur, vente)</li>
-          </ul>
-        </div>
-
-        <div class="card card-photo" style="--card-img: url('assets/alimentaire.jpg');">
-          <span class="tag">Industrie & Agroalimentaire</span>
-          <h3>Équipements & maintenance</h3>
-          <ul>
-            <li>Boulangerie-pâtisserie & agroalimentaire (commande, vente, installation, maintenance)</li>
-            <li>Moulins pour transformation céréalière (achat/vente/commercialisation)</li>
-            <li>Maintenance industrielle</li>
-          </ul>
-        </div>
-
-        <div class="card card-photo" style="--card-img: url('assets/8866.jpeg');">
-          <span class="tag">BTP • Hydraulique • WASH</span>
-          <h3>Infrastructures & environnement</h3>
-          <ul>
-            <li>Travaux publics, BTP, hydraulique</li>
-            <li>Eau, hygiène et assainissement</li>
-            <li>Prestations associées et suivi</li>
-          </ul>
-        </div>
-
-        <div class="card card-photo" style="--card-img: url('assets/azert.jpg');">
-          <span class="tag">Commerce & Services</span>
-          <h3>Intermédiation & distribution</h3>
-          <ul>
-            <li>Commerce général</li>
-            <li>Représentation & intermédiation commerciale</li>
-            <li>Négoce, distribution, prestation de services</li>
-          </ul>
-        </div>
-
-        <div class="card card-photo" style="--card-img: url('assets/cadena.jpg');">
-          <span class="tag">Import-Export</span>
-          <h3>Approvisionnement</h3>
-          <ul>
-            <li>Import-export</li>
-            <li>Chaînes d’approvisionnement</li>
-            <li>Opérations commerciales associées</li>
-          </ul>
-        </div>
-
-        <div class="card card-photo" style="--card-img: url('assets/activites.jpeg');">
-          <span class="tag">Transport & Véhicules</span>
-          <h3>Logistique</h3>
-          <ul>
-            <li>Transport des marchandises</li>
-            <li>Vente & location de véhicules</li>
-            <li>Organisation logistique</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <section id="apropos">
-      <div class="two">
-        <div class="panel">
-          <h2>À propos</h2>
-          <p style="color:var(--muted); margin-top:10px;">
-            <b style="color:var(--text);">DAN DAOURA GROUP S.A.R.L.U</b> est une entreprise de droit nigérien,
-            créée par des Nigériens, visant à renforcer le secteur privé par des activités diversifiées et structurées.
-          </p>
-          <ul class="list" style="margin-top:14px;">
-            <li class="li"><b>Vision :</b> contribuer durablement au développement économique du Niger.</li>
-            <li class="li"><b>Mission :</b> fournir des solutions fiables, performantes et adaptées aux besoins locaux.</li>
-            <li class="li"><b>Valeurs :</b> professionnalisme, qualité, transparence, respect des normes.</li>
-          </ul>
+    <!-- About Section -->
+    <section class="about" id="apropos">
+        <div class="container">
+            <div class="section-header">
+                <h2>À Propos de DAN DAOURA GROUP</h2>
+                <p>Une société de droit nigérien créée par des Nigériens pour accroître et diversifier les activités du secteur privé nigérien</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Notre Vision</h3>
+                    <p>DAN DAOURA GROUP S.A.R.L.U est une entreprise dynamique et ambitieuse, établie comme Société À Responsabilité Limitée Unipersonnelle selon les dispositions de l'Acte Uniforme de l'OHADA.</p>
+                    <p>Nous nous engageons à contribuer au développement économique du Niger à travers une approche multisectorielle innovante, combinant expertise technique et engagement local.</p>
+                    <p>Notre mission est de fournir des solutions de qualité dans des secteurs stratégiques, tout en créant de la valeur durable pour nos clients et partenaires.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h4>15+</h4>
+                        <p>Secteurs d'activité</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>100%</h4>
+                        <p>Capital nigérien</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>∞</h4>
+                        <p>Engagement qualité</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Niger</h4>
+                        <p>Basé à Niamey</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="panel" id="services">
-          <h2>Notre approche</h2>
-          <p style="color:var(--muted); margin-top:10px;">
-            Nous accompagnons nos clients de l’étude à la mise en œuvre, avec une logique de qualité et de suivi.
-          </p>
-          <ul class="list" style="margin-top:14px;">
-            <li class="li"><b>Étude & conseil :</b> analyse du besoin, recommandations, cadrage.</li>
-            <li class="li"><b>Fourniture :</b> sourcing, importation si nécessaire, livraison.</li>
-            <li class="li"><b>Installation :</b> exécution, supervision, contrôle qualité.</li>
-            <li class="li"><b>Maintenance :</b> entretien préventif et correctif.</li>
-            <li class="li"><b>Partenariats :</b> collaboration commerciale et représentation.</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <section id="devis">
-  <div class="panel">
-    <div class="section-title">
-      <div>
-        <h2>Demande de cotation</h2>
-        <p>
-          Décrivez votre besoin. Après étude, notre équipe vous contactera
-          pour vous proposer une solution adaptée.
-        </p>
-      </div>
-    </div>
-
-    <form id="devisForm" class="two" action="#" method="post">
-      <div class="card" style="min-height:auto;">
-        <label>Nom / Entreprise</label>
-        <input type="text" id="nom" name="nom" required placeholder="Votre nom ou société">
-
-        <label>Téléphone</label>
-        <input type="tel" id="telephone" name="telephone" required placeholder="+227 ...">
-
-        <label>Email (optionnel)</label>
-        <input type="email" id="email" name="email" placeholder="exemple@email.com">
-
-        <label>Ville / Pays</label>
-        <input type="text" id="ville" name="ville" placeholder="Niamey, Niger">
-      </div>
-
-      <div class="card" style="min-height:auto;">
-        <label>Domaine concerné</label>
-        <select id="domaine" name="domaine" required>
-          <option value="">-- Sélectionner --</option>
-          <option>Énergie & Ressources</option>
-          <option>Industrie & Agroalimentaire</option>
-          <option>BTP / Hydraulique / Assainissement</option>
-          <option>Commerce & Services</option>
-          <option>Transport & Logistique</option>
-          <option>Autre</option>
-        </select>
-
-        <label>Description du besoin</label>
-        <textarea id="description" name="description" required placeholder="Expliquez votre projet ou votre demande..."></textarea>
-
-        <button class="btn primary" type="submit">
-          Envoyer la demande de devis
-        </button>
-
-        <div class="note">
-          🔒 Les informations transmises sont strictement confidentielles.
-        </div>
-      </div>
-    </form>
-  </div>
-</section>
-
-
-
-    <section id="contact">
-      <div class="panel">
-        <div class="section-title">
-          <div>
-            <h2>Contact</h2>
-            <p>Pour une demande d’information, un partenariat ou un devis : contactez-nous.</p>
-          </div>
-          <a class="btn whatsapp" target="_blank"
-             href="https://wa.me/22798776777?text=Bonjour%20DAN%20DAOURA%20GROUP%2C%20je%20souhaite%20vous%20contacter%20pour%20une%20demande.">
-            WhatsApp
-          </a>
-        </div>
-
-        <div class="two">
-          <div class="card" style="min-height:auto;">
-            <h3>Coordonnées</h3>
-            <div class="contact">
-              <div><b>Siège :</b> Niamey, Niger</div>
-              <div><b>BP :</b> 10317</div>
-              <div><b>Téléphones :</b> (+227) 98776777 / 93829493 / 85908686</div>
-              <div><b>Email :</b> <i>à ajouter</i> (ex: contact@dandaouragroup.ne)</div>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Domaines d'Expertise</h2>
+                <p>Des solutions complètes et diversifiées pour répondre aux besoins du marché nigérien et régional</p>
             </div>
-          </div>
-
-          <div class="card" style="min-height:auto;">
-            <h3>Réseaux sociaux</h3>
-           
-            <div class="social-links">
-              <a class="btn social-btn" href="#" onclick="return false;" aria-label="Facebook">
-                <img class="social-icon" src="assets/facebook.jpg" alt="" />
-              </a>
-              <a class="btn social-btn" href="#" onclick="return false;" aria-label="Twitter">
-                <img class="social-icon" src="assets/twitter.jpg" alt="" />
-              </a>
-              <a class="btn social-btn" href="#" onclick="return false;" aria-label="Instagram">
-                <img class="social-icon" src="assets/insta.jpg" alt="" />
-              </a>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=300&fit=crop" alt="Énergie solaire" class="service-image">
+                    <h3>Énergie</h3>
+                    <p>Production, transformation et distribution d'énergie solaire et thermique. Solutions énergétiques durables et innovantes.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&h=300&fit=crop" alt="Exploitation minière" class="service-image">
+                    <h3>Exploitation Minière</h3>
+                    <p>Exploitation et valorisation des ressources minières avec respect des normes environnementales.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&h=300&fit=crop" alt="Pétrole et gaz" class="service-image">
+                    <h3>Pétrole & Gaz</h3>
+                    <p>Centre remplisseur de gaz domestique, vente et commercialisation de produits pétroliers et gaziers.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=300&fit=crop" alt="Boulangerie" class="service-image">
+                    <h3>Boulangerie-Pâtisserie</h3>
+                    <p>Production agroalimentaire de qualité, équipements de boulangerie et services de maintenance.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=300&fit=crop" alt="BTP" class="service-image">
+                    <h3>BTP & Travaux Publics</h3>
+                    <p>Construction, réhabilitation et maintenance d'infrastructures. Expertise en hydraulique et génie civil.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=300&fit=crop" alt="Eau et assainissement" class="service-image">
+                    <h3>Eau & Assainissement</h3>
+                    <p>Solutions d'approvisionnement en eau potable, systèmes d'assainissement et programmes d'hygiène.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=500&h=300&fit=crop" alt="Moulins" class="service-image">
+                    <h3>Moulins Céréaliers</h3>
+                    <p>Vente, installation et maintenance de moulins pour la transformation des céréales.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&h=300&fit=crop" alt="Transport" class="service-image">
+                    <h3>Transport & Logistique</h3>
+                    <p>Transport de marchandises, vente et location de véhicules. Solutions logistiques complètes.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&h=300&fit=crop" alt="Maintenance" class="service-image">
+                    <h3>Maintenance Industrielle</h3>
+                    <p>Services de maintenance préventive et corrective pour équipements industriels.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop" alt="Imprimerie" class="service-image">
+                    <h3>Imprimerie</h3>
+                    <p>Services d'impression professionnelle et solutions de communication visuelle.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop" alt="Import-Export" class="service-image">
+                    <h3>Import-Export</h3>
+                    <p>Négoce international, distribution et intermédiation commerciale.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=500&h=300&fit=crop" alt="Commerce" class="service-image">
+                    <h3>Commerce Général</h3>
+                    <p>Solutions commerciales diversifiées et prestations de services sur mesure.</p>
+                </div>
             </div>
-            
-          </div>
         </div>
-      </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contactez-Nous</h2>
+                <p>Notre équipe est à votre écoute pour tous vos projets et besoins</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Adresse</h4>
+                            <p>Niamey, Niger<br>BP : 10317</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <p>(+227) 98 77 67 77<br>(+227) 93 82 94 93<br>(+227) 85 90 86 86</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h4>Horaires</h4>
+                            <p>Lundi - Vendredi: 8h00 - 17h00<br>Samedi: 8h00 - 13h00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="color: var(--primary-color); margin-bottom: 2rem;">Envoyez-nous un message</h3>
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email (optionnel)</label>
+                        <input type="email" id="email" placeholder="votre.email@exemple.com">
+                        <small style="color: var(--text-light); font-size: 0.85rem; margin-top: 0.3rem; display: block;">
+                            💡 Sans email, vous serez redirigé vers WhatsApp
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" placeholder="+227 XX XX XX XX">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="handleSubmit()">Envoyer le message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <div class="foot">
-        <div>
-          <div style="font-weight:900; color:var(--text);">DAN DAOURA GROUP S.A.R.L.U</div>
-          <div class="small">© <span id="y"></span> — Tous droits réservés.</div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DAN DAOURA GROUP</h3>
+                <p>Société À Responsabilité Limitée Unipersonnelle (S.A.R.L.U)</p>
+                <p>Une entreprise nigérienne au service du développement national</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#services">Énergie</a>
+                <a href="#services">Exploitation minière</a>
+                <a href="#services">BTP & Travaux publics</a>
+                <a href="#services">Commerce & Distribution</a>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Utiles</h3>
+                <a href="#apropos">À propos</a>
+                <a href="#services">Nos services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📍 Niamey, Niger - BP: 10317</p>
+                <p>📞 (+227) 98 77 67 77</p>
+                <p>📞 (+227) 93 82 94 93</p>
+                <p>📞 (+227) 85 90 86 86</p>
+            </div>
         </div>
-        <div class="small">
-          Mention légale : “Société À Responsabilité Limitée Unipersonnelle (SARL-U)”
+        <div class="footer-bottom">
+            <p>&copy; 2025 DAN DAOURA GROUP S.A.R.L.U - Tous droits réservés</p>
         </div>
-      </div>
     </footer>
-  </main>
 
-  <script>
-    // Numéro WhatsApp de l'admin (format international sans le +)
-    const ADMIN_WHATSAPP = "22798776777"; // Modifier ce numéro si nécessaire
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialiser EmailJS
+        emailjs.init('TTPbhfescVE_Zj2pX');
 
-    // Gestion du formulaire de devis
-    const devisForm = document.getElementById("devisForm");
-    if (devisForm) {
-      devisForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-        
-        // Récupérer les valeurs du formulaire
-        const nom = document.getElementById("nom").value;
-        const telephone = document.getElementById("telephone").value;
-        const email = document.getElementById("email").value;
-        const ville = document.getElementById("ville").value;
-        const domaine = document.getElementById("domaine").value;
-        const description = document.getElementById("description").value;
-        
-        // Créer le message WhatsApp
-        let message = "🔹 *NOUVELLE DEMANDE DE DEVIS*\n\n";
-        message += `👤 *Nom/Entreprise:* ${nom}\n`;
-        message += `📱 *Téléphone:* ${telephone}\n`;
-        if (email) message += `📧 *Email:* ${email}\n`;
-        if (ville) message += `📍 *Ville:* ${ville}\n`;
-        message += `🏢 *Domaine:* ${domaine}\n\n`;
-        message += `📝 *Description du besoin:*\n${description}`;
-        
-        // Encoder le message pour l'URL
-        const encodedMessage = encodeURIComponent(message);
-        
-        // Créer l'URL WhatsApp
-        const whatsappURL = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodedMessage}`;
-        
-        // Ouvrir WhatsApp dans un nouvel onglet
-        window.open(whatsappURL, '_blank');
-        
-        // Optionnel: Réinitialiser le formulaire après l'envoi
-        // devisForm.reset();
-        
-        // Afficher un message de confirmation
-        alert("Votre demande va être envoyée via WhatsApp. Merci !");
-      });
-    }
-
-    document.getElementById("y").textContent = new Date().getFullYear();
-    const hero = document.querySelector("header.hero");
-    const heroImages = [
-      "assets/hero.jpg",
-      "assets/activites.jpeg",
-      "assets/Big-5.jpg"
-    ];
-    const fadeDuration = 800;
-    let heroIndex = 0;
-    setInterval(() => {
-      hero.classList.add("is-fading");
-      setTimeout(() => {
-        heroIndex = (heroIndex + 1) % heroImages.length;
-        hero.style.setProperty("--hero-img", `url("${heroImages[heroIndex]}")`);
-        hero.classList.remove("is-fading");
-      }, fadeDuration / 2);
-    }, 4000);
-
-    const revealItems = document.querySelectorAll("section, header.hero, footer");
-    const revealText = document.querySelectorAll("h1, h2, h3, p, li, .tag, .btn");
-    revealItems.forEach((el) => el.classList.add("reveal"));
-    revealText.forEach((el, i) => {
-      el.classList.add("reveal-text");
-      const delay = el.classList.contains("btn") ? 0 : Math.min(i * 40, 240);
-      el.style.setProperty("--reveal-delay", `${delay}ms`);
-    });
-    const activityCards = document.querySelectorAll("#activites .cards .card");
-    activityCards.forEach((el, i) => {
-      el.classList.add(i % 2 === 0 ? "reveal-slide-left" : "reveal-slide-right");
-    });
-    const creativeBlocks = document.querySelectorAll(".panel, .card");
-    creativeBlocks.forEach((el) => {
-      if (el.closest("#activites .cards")) {
-        return;
-      }
-      el.classList.add("reveal-zoom");
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-      },
-      { threshold: 0.18 }
-    );
-    document
-      .querySelectorAll(
-        ".reveal, .reveal-text, .reveal-slide-left, .reveal-slide-right, .reveal-zoom"
-      )
-      .forEach((el) => {
-      observer.observe(el);
-    });
-  </script>
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Form submission avec EmailJS et WhatsApp
+        function handleSubmit() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            const submitBtn = event.target;
+
+            if (!name || !message) {
+                alert('Veuillez remplir au minimum votre nom et votre message.');
+                return;
+            }
+
+            // Valider le format email si fourni
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const hasValidEmail = email && emailRegex.test(email);
+
+            // Si pas d'email valide, rediriger vers WhatsApp
+            if (!hasValidEmail) {
+                const whatsappNumber = '22798776777'; // (+227) 98 77 67 77
+                const phoneInfo = phone ? `\nTéléphone: ${phone}` : '';
+                const whatsappMessage = `Bonjour, je suis ${name}${phoneInfo}\n\n${message}`;
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                
+                // Ouvrir WhatsApp dans un nouvel onglet
+                window.open(whatsappURL, '_blank');
+                
+                // Réinitialiser le formulaire
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('message').value = '';
+                
+                alert('📱 Vous allez être redirigé vers WhatsApp pour finaliser votre message !');
+                return;
+            }
+
+            // Si email valide, envoyer via EmailJS
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.style.opacity = '0.6';
+
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                phone: phone || 'Non fourni',
+                message: message,
+                to_email: 'dandaouragroup.contact@gmail.com'
+            };
+
+            emailjs.send('service_o0y41y2', 'template_yf40c0m', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('✅ Merci pour votre message ! Nous vous contacterons très bientôt par email.');
+                    
+                    // Réinitialiser le formulaire
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('phone').value = '';
+                    document.getElementById('message').value = '';
+                    
+                    // Réactiver le bouton
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Envoyer le message';
+                    submitBtn.style.opacity = '1';
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('❌ Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone/WhatsApp.');
+                    
+                    // Réactiver le bouton
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Envoyer le message';
+                    submitBtn.style.opacity = '1';
+                });
+        }
+
+        // Scroll animations avec répétition
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Ajouter l'animation quand l'élément entre dans l'écran
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 100);
+                } else {
+                    // Retirer l'animation quand l'élément sort de l'écran
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observer pour les éléments standards
+        document.querySelectorAll('.service-card, .stat-card, .contact-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Observer spécial pour le hero avec un seuil différent
+        const heroObserverOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                } else {
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, heroObserverOptions);
+
+        // Observer les éléments du hero
+        document.querySelectorAll('.hero h1, .hero p, .cta-buttons').forEach(el => {
+            heroObserver.observe(el);
+        });
+    </script>
 </body>
 </html>
